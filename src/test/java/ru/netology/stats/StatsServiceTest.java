@@ -23,23 +23,15 @@ class StatsServiceTest {
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         StatsService service = new StatsService();
 
-        long[] actual = service.average(sales);
+        long actual = service.average(sales);
         long expected = 8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18;
-
-        assertEquals(actual, expected);
-
-    }
+         assertEquals(expected,actual);
 
 
-    @Test
-    public void shouldFindBetween() {
-        StatsService service = new StatsService();
-        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-
-        long expected = 20;
-        long actual = service.maxSales(sales);
 
     }
+
+
 
 
 
@@ -50,6 +42,7 @@ class StatsServiceTest {
 
         long expected = 20;
         long actual = service.minSales(sales);
+        assertEquals(expected, actual);
 
     }
 
