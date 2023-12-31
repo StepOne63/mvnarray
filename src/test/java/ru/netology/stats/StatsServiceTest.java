@@ -24,7 +24,7 @@ class StatsServiceTest {
         StatsService service = new StatsService();
 
         long actual = service.average(sales);
-        long expected = 8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18;
+        long expected = (8 + 15 + 13 + 15 + 17 + 20 + 19 + 20 + 7 + 14 + 14 + 18) / 12;
          assertEquals(expected,actual);
 
 
@@ -36,12 +36,13 @@ class StatsServiceTest {
 
 
     @Test
-    public void shouldFindBetweenMin() {
-        StatsService service = new StatsService();
+    public void testMounthMaximum() {
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        StatsService service = new StatsService();
 
-        long expected = 20;
-        long actual = service.minSales(sales);
+
+        long actual = service.calcMonthMaximumSale(sales);
+        long expected = 6;
         assertEquals(expected, actual);
 
     }
