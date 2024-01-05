@@ -49,6 +49,51 @@ class StatsServiceTest {
 
 
 
+    @Test
+    public void testMounthMinimum() {
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        StatsService service = new StatsService();
+
+
+        long actual = service.calcMonthMinimumSale(sales);
+        long expected = 1;
+        assertEquals(expected, actual);
+
+    }
+
+
+    @Test
+    public void testMonthMoreAverage() {
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        StatsService service = new StatsService();
+
+
+        long actual = service.calcMonthMoreAverageSale(sales);
+        long expected = 5;
+        assertEquals(expected, actual);
+
+    }
+
+
+    @Test
+    public void testMonthBelowAverage() {
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        StatsService service = new StatsService();
+
+
+        long actual = service.calcMonthBelowAverageSale(sales);
+        long expected = 5;
+        assertEquals(expected, actual);
+
+    }
+
+
+
+
+
+
+
+
 
 
 }
